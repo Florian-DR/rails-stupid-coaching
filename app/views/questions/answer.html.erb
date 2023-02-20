@@ -1,0 +1,17 @@
+<h1>Answer</h1>
+<div><p>- <%=@ask%></p>
+  <p class="italique">- You</p>
+</div>
+<%
+  if @ask == "I am going to work" then answer = "Great!"
+  elsif @ask.end_with?("?") then answer = "Silly question, get dressed and go to work!"
+  else
+    answer= "I don't care, get dressed and go to work!"
+  end
+%>
+
+<div><p>- <%=answer%></p>
+  <p class="italique" >- Your coach</p>
+</div>
+
+<p class="btn"><%= link_to "Ask a new question", ask_path%></p>
